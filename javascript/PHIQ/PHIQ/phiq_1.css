@@ -1,0 +1,95 @@
+@charset-"UTF-8"
+*{
+	margin:0;
+	padding:0;
+	font-family:'Lucida Grande','Hiragino Kaku Gothic ProN',
+ Meiryo, sans-serif;
+}
+
+body{
+	margin-top:15px;
+}
+
+header{
+	background-color:white;
+	width:960px;
+	height:40px;
+
+}
+
+#titletop{
+	float:right;
+	margin-right:50px;
+}
+
+#wrap{
+	width:960px;
+	height:1500px;
+	margin:0 auto;
+
+}
+
+#contents{
+	background-color: pink;
+	width:960px;
+	height:1500px;
+
+}
+/*カラム１*/
+#calam1{
+	margin-bottom:50px;
+	height:400px;
+
+}
+
+#img1{
+	margin-left:60px;
+
+}
+
+#name{
+	float:right;
+	font-family:'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+/*	margin-right: 80px;*/
+	margin-top: 100px;
+	width:264px;
+	height:287px;
+}
+
+#nameone{
+	background-color: red
+	margin-bottom:0px;
+	font-size:22px;
+
+}
+
+#nametwo{
+	background-color: gray;
+	margin-top:10px;
+	font-size:44px;
+}
+
+#namethree{
+	background-color: yellow;
+	text-align:right;
+	font-size: 31px;
+	letter-spacing: 10px;
+}
+
+#calam2{
+	margin-left:60px;
+	margin-bottom:50px;
+}
+
+#calam3{
+	clear: both;
+	margin-left:60px;
+	margin-bottom:50px;
+}
+
+footer{
+	background-color: #C473FF;
+	height:50px;
+	width:960px;
+	bottom:0;
+}

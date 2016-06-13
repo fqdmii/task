@@ -1,0 +1,107 @@
+@charset "utf-8"
+*{
+	margin:0;
+	padding:0;
+}
+
+/*ziinophiqofficial*/
+
+/*全体*/
+#wrap{
+		width:960px;
+		height:600px;
+		background-color:white ;/*#FB66FF*/
+		margin: 0 auto;
+}
+
+header{
+	margin-top:40px;
+	background-color: white;
+	padding-right:10px;
+	height: 50px;
+}
+
+#title{
+	margin-top:5px;
+}
+/*SNSアイコンと言語のかたまりたち*/
+#topicon{
+	float:right;
+}
+/*アイコンたちのpaddingをとろう*/
+.SNSicon{
+	margin-left: 40px;
+}
+
+/*コンテンツ*/
+#contents{
+	/*position:relative;*/
+	margin:auto 0px;
+	width:960px;
+	height:550px;
+	background-color:white;
+}
+
+#slideshow{
+	position:relative;
+	margin-top:150px;
+	margin-left: 140px;
+	width:400px;
+	height:300px;
+	display:inline-block;
+
+
+}
+#slideshow img{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:8;
+	opacity:0.0;
+}
+
+#slideshow img.active{
+	z-index: 10;
+	opacity: 1.0;
+}
+
+#slideshow img.last-active{
+	z-index: 9;
+}
+
+#logoimg{
+	float:right;
+	margin-top:270px;
+	margin-right:160px;
+
+}
+
+
+footer{
+	background-color: #C473FF;
+	position:absolute;
+	height:50px;
+	width:960px;
+	bottom:0;
+}
+
+.bar1{
+	margin-top:20px;
+	font-size:20px;
+	float:left;
+}
+
+.bar2{
+	size:80%;
+	margin-top:20px;
+	font-size:20px;
+	float:left;
+	margin-left:60px;
+}
+
+
+
+
+
+
+
