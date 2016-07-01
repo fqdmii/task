@@ -1,0 +1,52 @@
+@charset "utf8";
+
+*{margin:0; padding:0;
+	font-family:'Lucida Grande','Hiragino Kaku Gothic ProN',Meiryo, sans-serif;
+}
+
+a:link{ color: maroon;}
+ a:visited{ color: navy;}
+ a:hover{ color:maroon; background:#CCFFFF;}
+ a:active{ background: aqua;}
+
+header, footer,#contents{
+	width:960px;
+	margin: 0 auto;
+	background-color: #EEEEEE;
+
+}
+header{
+	width:960px;
+	padding-top:30px;
+}
+.pager{
+	margin-left:130px;
+}
+#titlelogo{
+
+	margin-right:130px;
+	margin-left:130px;
+	overflow: hidden;
+
+}
+.first{
+	margin-top:20px;
+	text-align:center;
+}
+
+
+#contents{
+	width:960px;
+	height:600px;
+	background-color: ;
+	padding-top:50px;
+}
+article{
+	font-size:30px;
+	padding-bottom:10px;
+	padding-left:130px;
+}
+
+footer{
+	text-align: center;
+}

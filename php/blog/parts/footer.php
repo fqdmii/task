@@ -1,0 +1,1 @@
+<p><small>2016 c Mizuki Fukuda All rights reserved.</small></p>
