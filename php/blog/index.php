@@ -1,7 +1,8 @@
 <?php require 'utils.php'; ?>
 <?php
+		$page_title = "ブログトップページ";
 		$limit = 5;
-		$offset = 0;//どこからとってくるか、ここでは４番目からとってくる
+		$offset = get_offset();//←utilからとってきてる、どこからとってくるか、ここでは４番目からとってくる
 			if (isset($_GET['limit']) and !empty($_GET['limit'])){
 			$limit = $_GET['limit'];//サイトのURLにlimit=?で指定したら指定した数しかでない相対的にかわるための値
 		}
@@ -10,19 +11,9 @@
 			$offset = $_GET['offset'];
 		}
 
-		$st_count = $db->query("select count(*) as count from posts");
-		$row = $st_count->fetch();
-		$count = $row['count'];
 
-
-		$stmt = $db->query("select * from posts order by updated desc limit ${limit} offset ${offset}");
-
-		$prev_offset = $offset - $limit;
-			if ($prev_offset <= 0){
-				$prev_offset = 0;
-			}
-
-		$next_offset = $offset + $limit;
+		$count = get_posts_count();
+		$stmt = get_db()->query("select * from posts order by updated desc limit ${limit} offset ${offset}");//statement
 
  ?>
 <!DOCTYPE html>
@@ -44,10 +35,10 @@
 			<a class="pager" href="new.php">NewArticle</a>
 			<div class="pager">
 				<?php if($offset > 0) : ?>
-					<a href="/blog/?offset=<?php echo $prev_offset; ?>">new</a>
+					<a href="/blog/?offset=<?php echo get_prev_offset($limit); ?>">new</a>
 				<?php endif; ?>
 				<?php if ($offset + $limit < $count) : ?>
-					<a href="?offset=<?php echo $next_offset; ?>">old</a>
+					<a href="?offset=<?php echo get_next_offset($limit); ?>">old</a>
 				<?php endif; ?>
 				<p>総件数：<?php echo $count; ?></p>
 			</div>

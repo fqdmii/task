@@ -1,18 +1,22 @@
 <?php require 'utils.php'; ?>
 <?php
-		if(!isset($_REQUEST['id']) or empty($_REQUEST['id'])){
-			$error ="idが指定されていません";
-		} else {
+if(is_empty($_REQUEST,'id')){
+		$error ="idが指定されていません";
+} else {
 		$id = $_REQUEST['id'];
-		$sql = "delete from posts where id = ?";
-		$st = $db->prepare($sql);
-		$success = $st->execute(array($id));
-		}
-		if(isset($error)){
+
+	if(!is_exist($id)){
+		$error = "指定した記事がありません";
+	}else{
+		delete_post($id);
+	}
+}
+
+if(isset($error)){
 			$page_title = "エラー";
-		}else{
+	}else{
 			$page_title = "id=${id}の記事を削除しました";
-		}
+	}
  ?>
 
 <!DOCTYPE html>
@@ -20,6 +24,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?php echo $page_title ?></title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<h1><?php echo $page_title ?></h1>

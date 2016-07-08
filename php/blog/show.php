@@ -34,7 +34,9 @@
 			<?php if (isset($post)){ ?>
 			<h2><?php echo $post['title']; ?></h2>
 			<p><?php echo $post['created']; ?></p>
+			<p><?php echo $post['updated']; ?></p>
 			<p><?php echo $post['contents']; ?></p>
+			<img src="image.php?id=<?php echo $post['id']; ?>" >
 			<?php } ?>
 		</article>
 	</div>

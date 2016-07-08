@@ -2,38 +2,32 @@
 <?php
 	//編集と新規作成の判定
 	$mode = 'new';
-	if (isset($_POST['type']) and $_POST['type'] == 'edit'){
+
+	if (is_edit($_POST,'type')){
 		$mode = 'edit';
 		$id = $_POST['id'];
-	}
+		}
 
-			if(!isset($_POST['title']) or !isset($_POST['contents'])){
-				$error = "タイトルと内容を設定してください";
-			} else if(empty($_POST['title']) or empty($_POST['contents'])){
-				$error = "タイトルと内容を設定してください";
-			} else {
+if (is_empty($_POST,'title')){
+		$error = "タイトルを設定してください";
+	}else if(is_empty($_POST,'contents')){
+			$error = "内容を設定してください";
+	} else {
 				$title = $_POST['title'];
 				$contents = $_POST['contents'];
-
-				if($mode == 'edit'){
-
-					$sql = "update posts set title = ?, contents = ?,
-								updated = current_timestamp where id = ?";
-								$params = array($title, $contents, $id);
+				$image = $_FILES['image'];
+				if ($mode == 'edit'){
+					update_post($id,$title,$contents,$image);
 				}else{
-					$sql = "insert into posts (title,contents,created,updated)
-					values (?,?,current_timestamp,current_timestamp)";
-					$params = array($title,$contents);
+					create_post($title,$contents,$image);
 				}
-
-		$st = $db->prepare($sql);
-		$success = $st->execute($params);
-		}
-		if (isset($error)){
+	}
+	if (isset($error)){
 			$page_title = "エラー！！！！！";
-		}else{
+	}else{
 			$page_title = "記事を作成しました";
-		}
+	}
+
 ?>
 
 <!DOCTYPE html>
